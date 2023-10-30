@@ -100,24 +100,24 @@ function DaftarData() {
     <>
         <div className="flex justify-center mb-14">
           <input
-            className="input-daftar border border-solid border-gray-500 rounded py-0.5 px-2.5 w-56"
+            className="input-daftar border border-solid rounded py-0.5 px-2.5 w-56 border-indigo-600"
             type="text"
             name="inputDaftar"
             placeholder="masukan list baru"
             value={input.inputDaftar}
             onChange={olahInput}
           />
-          <button className="tombol-tambah border border-solid border-gray-500 rounded py-0.5 px-5 ml-5" onClick={tambah}>Tambah</button>
+          <button className="tombol-tambah bg-indigo-600 text-white rounded py-0.5 px-5 ml-5" onClick={tambah}>Tambah</button>
         </div>
         <div className="flex mb-10">
-          <button className="tombol-semua border border-solid border-gray-500 rounded-xl py-0.5 px-2.5 mx-1" onClick={() => filterData("SEMUA")}>SEMUA</button>
-          <button className="tombol-aktif border border-solid border-gray-500 rounded-xl py-0.5 px-2.5 mx-2" onClick={() => filterData("AKTIF")}>AKTIF</button>
-          <button className="tombol-selesai border border-solid border-gray-500 rounded-xl py-0.5 px-2.5 mx-2" onClick={() => filterData("SELESAI")}>SELESAI</button>
+          <button className="tombol-semua rounded-xl py-2 px-3 mx-2 bg-indigo-300 text-gray-900 text-sm" onClick={() => filterData("SEMUA")}>SEMUA</button>
+          <button className="tombol-aktif rounded-xl py-2 px-4 mx-2 bg-indigo-300 text-gray-900 text-sm" onClick={() => filterData("AKTIF")}>AKTIF</button>
+          <button className="tombol-selesai rounded-xl py-2 px-3 mx-2 bg-indigo-300 text-gray-900 text-sm" onClick={() => filterData("SELESAI")}>SELESAI</button>
         </div>
         <div>
           {data.filter(item => !item.deleted).map((item) => (
             <div key={item.id} className={ceklisItem[item.id] ? "line-through" : ""}>
-              <div className='mt-4 border border-solid border-gray-500 rounded px-5 py-2 flex items-center justify-between'>
+              <div className='mt-4 border border-solid border-indigo-300 rounded px-5 py-2 flex items-center justify-between'>
                 {editingItemId === item.id ? (
                   <input
                     className='scale-150'
